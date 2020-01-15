@@ -1,20 +1,27 @@
-var bmi = function(number1, number2) {
-    return (number2 * 703) / (number1 ** 2)
+var add = function(number1, number2) {
+  return number1 + number2;
 };
 
-var number1 = parseInt(prompt("Enter your height(inches):"));
-var number2 = parseInt(prompt("Enter your weight(lbs):"));
-var result = bmi(number1, number2);
-alert(result);
-
-var volume = function(gallons){
-    return (gallons * 3.78541)
+var subtract = function(number1, number2) {
+  return number1 - number2;
 };
 
-var volume = function (gallons) {
-    return (gallons * 3.78541)
+var multiply = function(number1, number2) {
+  return number1 * number2;
 };
 
-var gallons = parseInt(prompt("Enter volume in gallons"));
-var result = volume(gallons)
-alert(result);
+var divide = function(number1, number2) {
+  return number1 / number2;
+};
+//evrything below is user interface
+
+$(document).ready(function() {
+  $("form#add").submit(function(event) {
+  event.preventDefault();
+  var number1 = parseInt($("#add1").val());
+  var number2 = parseInt($("#add2").val());
+  var result = add(number1, number2);
+  $("#output").text(result);
+  });
+});
+  
